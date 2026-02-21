@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ===== DESIGN SYSTEM ===== */
+
+@layer base {
+  :root {
+
+    /* 🌞 LIGHT FINANCIAL DASHBOARD THEME */
+
+    --background: 210 20% 98%;            /* fundo geral claro */
+    --foreground: 222 47% 15%;            /* texto principal */
+
+    --card: 0 0% 100%;                    /* cards brancos */
+    --card-foreground: 222 47% 15%;
+    --card-elevated: 210 20% 96%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 15%;
+
+    /* 🌿 Primary (verde financeiro suave) */
+    --primary: 152 60% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 60% 55%;
+    --primary-subtle: 152 60% 94%;
+
+    --secondary: 210 30% 95%;
+    --secondary-foreground: 222 47% 20%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 20% 40%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-subtle: 38 90% 94%;
+
+    /* 💰 Income */
+    --income: 152 60% 42%;
+    --income-foreground: 0 0% 100%;
+    --income-subtle: 152 60% 94%;
+
+    /* 💸 Expense */
+    --expense: 350 75% 55%;
+    --expense-foreground: 0 0% 100%;
+    --expense-subtle: 350 80% 95%;
+
+    /* 💳 Debt */
+    --debt: 25 85% 55%;
+    --debt-foreground: 0 0% 100%;
+    --debt-subtle: 25 85% 94%;
+
+    /* 🏦 Savings */
+    --savings: 200 80% 50%;
+    --savings-foreground: 0 0% 100%;
+    --savings-subtle: 200 80% 95%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-subtle: 38 90% 94%;
+
+    --destructive: 350 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* ✨ Bordas e inputs claros */
+    --border: 210 30% 88%;
+    --border-subtle: 210 30% 92%;
+    --input: 210 30% 94%;
+    --ring: 152 60% 42%;
+
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+
+    /* 🌿 Sidebar Clara */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 20%;
+    --sidebar-primary: 152 60% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 95%;
+    --sidebar-accent-foreground: 222 47% 20%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 152 60% 42%;
+
+    /* 🌤 Gradients Suaves */
+    --gradient-primary: linear-gradient(135deg, hsl(152 60% 42%), hsl(152 60% 55%));
+    --gradient-income: linear-gradient(135deg, hsl(152 60% 94%), hsl(152 60% 98%));
+    --gradient-expense: linear-gradient(135deg, hsl(350 80% 95%), hsl(350 90% 98%));
+    --gradient-debt: linear-gradient(135deg, hsl(25 85% 94%), hsl(25 90% 98%));
+    --gradient-savings: linear-gradient(135deg, hsl(200 80% 95%), hsl(200 90% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 97%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 96%));
+
+    /* 🌫 Sombras suaves (modo claro) */
+    --shadow-sm: 0 1px 3px hsl(210 20% 85% / 0.4);
+    --shadow-md: 0 4px 16px hsl(210 20% 80% / 0.5);
+    --shadow-lg: 0 8px 32px hsl(210 20% 75% / 0.6);
+    --shadow-primary: 0 0 24px hsl(152 60% 42% / 0.15);
+    --shadow-income: 0 4px 20px hsl(152 60% 42% / 0.15);
+    --shadow-expense: 0 4px 20px hsl(350 75% 55% / 0.15);
+    --shadow-debt: 0 4px 20px hsl(25 85% 55% / 0.15);
+    --shadow-savings: 0 4px 20px hsl(200 80% 50% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-income {
+    background: var(--gradient-income);
+  }
+
+  .gradient-expense {
+    background: var(--gradient-expense);
+  }
+
+  .gradient-debt {
+    background: var(--gradient-debt);
+  }
+
+  .gradient-savings {
+    background: var(--gradient-savings);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-primary-glow {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .text-income { color: hsl(var(--income)); }
+  .text-expense { color: hsl(var(--expense)); }
+  .text-debt { color: hsl(var(--debt)); }
+  .text-savings { color: hsl(var(--savings)); }
+  .text-warning { color: hsl(var(--warning)); }
+
+  .bg-income-subtle { background-color: hsl(var(--income-subtle)); }
+  .bg-expense-subtle { background-color: hsl(var(--expense-subtle)); }
+  .bg-debt-subtle { background-color: hsl(var(--debt-subtle)); }
+  .bg-savings-subtle { background-color: hsl(var(--savings-subtle)); }
+  .bg-warning-subtle { background-color: hsl(var(--warning-subtle)); }
+  .bg-primary-subtle { background-color: hsl(var(--primary-subtle)); }
+  .bg-accent-subtle { background-color: hsl(var(--accent-subtle)); }
+  .bg-card-elevated { background-color: hsl(var(--card-elevated)); }
+
+  .border-income { border-color: hsl(var(--income) / 0.3); }
+  .border-expense { border-color: hsl(var(--expense) / 0.3); }
+  .border-debt { border-color: hsl(var(--debt) / 0.3); }
+  .border-savings { border-color: hsl(var(--savings) / 0.3); }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 999px;
+  }
+
+  .glass {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .metric-positive { color: hsl(var(--income)); }
+  .metric-negative { color: hsl(var(--expense)); }
+  .metric-neutral { color: hsl(var(--foreground)); }
+  .metric-warning { color: hsl(var(--warning)); }
+}
+
+/* Chart tooltip customization */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Custom scrollbar for entire app */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: pageEnter 0.3s ease-out;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress bar animations */
+@keyframes progressFill {
+  from { width: 0; }
+}
+
+.animate-progress {
+  animation: progressFill 1s ease-out;
+}
+
+/* Number count animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count {
+  animation: countUp 0.5s ease-out;
+}
+
+/* Pulse for alerts */
+@keyframes alertPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-alert-pulse {
+  animation: alertPulse 2s ease-in-out infinite;
+}
